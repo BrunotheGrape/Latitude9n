@@ -17,18 +17,20 @@ dfData$PER <- as.numeric(dfData$PER)
 
 #Chile as predicted by China GDP
 p <- ggplot(dfData, aes(x=CHN,y=CHL)) 
-p <- p + geom_point(colour = "darkblue", size = 4) 
+p <- p + geom_point(colour = "black", size = 5)
+p <- p + geom_point(colour = "salmon", size = 4)
 p <- p + geom_smooth(method="lm", col = "forestgreen", lwd = 2)
-p <- p + xlab("China GDP") + ylab("Chile GDP")
-p
+p <- p + xlab("China GDP") + ylab("Chile GDP") + ggtitle("Chile GDP Correlated With China GDP\n2004 through 2014")
+ggsave(file = "China_Peru.png")
 
 
 #Chile as predicted by China GDP
 p <- ggplot(dfData, aes(x=CHN,y=PER)) 
-p <- p + geom_point(colour = "darkblue", size = 4) 
+p <- p + geom_point(colour = "black", size = 5)
+p <- p + geom_point(colour = "lightblue", size = 4) 
 p <- p + geom_smooth(method="lm", col = "forestgreen", lwd = 2)
-p <- p + xlab("China GDP") + ylab("Peru GDP")
-p
+p <- p + xlab("China GDP") + ylab("Peru GDP") + ggtitle("Peru GDP Correlated With China GDP\n2004 through 2014")
+ggsave(file = "China_Chile.png")
 
 
 
